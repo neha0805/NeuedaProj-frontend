@@ -1,28 +1,33 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { addCustomer, getAllCustomers } from '../services/custservice';
 
 function CreateAccount() {
+  const [customer_Id, setCustomer_Id] = useState('')
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [gender, setGender] = useState(''); // Default value for gender
   const [dob, setDob] = useState('');
-  const [customer, setCustomer] = useState({firstName:'', lastName:'', dob:new Date()})
+  const [customer, setCustomer] = useState()
 
   let navigate = useNavigate()
 
-  const handleChange = (event)=>{
-    let {name, value} = event.target;
-    // if(name === 'dosh')
-    // {
-    //     if(value){
-    //         value = isNaN(parseFloat(value)) ? 0 : parseFloat(value)
-    //     }
-    // }
-    let newcustomer = {...customer, [name]:value}
-    setCustomer(newcustomer)
-}
+//   const handleChange = (event)=>{
+//     let {name, value} = event.target;
+//     // if(name === 'dosh')
+//     // {
+//     //     if(value){
+//     //         value = isNaN(parseFloat(value)) ? 0 : parseFloat(value)
+//     //     }
+//     // }
+    
+// }
 const handleRegister = (event)=>{
     event.preventDefault();
-    addCustomer(customer).then(res=>navigate('/'))
+    let custid = getAllCustomers();
+    let newcustomer = {firstName: firstName, lastName: lastName, dob: dob, gender: gender, customer_Id:custid.toString()}
+    setCustomer(newcustomer)
+    addCustomer(newcustomer).then(res=>navigate('/'))
 }
 
 
@@ -63,9 +68,8 @@ const handleRegister = (event)=>{
             value={gender}
             onChange={(e) => setGender(e.target.value)}
           >
-            <option value="male">Male</option>
-            <option value="female">Female</option>
-            <option value="other">Other</option>
+            <option value="M">M</option>
+            <option value="F">F</option>
           </select>
         </div>
         <div className="mb-3">
