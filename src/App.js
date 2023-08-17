@@ -4,7 +4,7 @@ import Home from "./components/Home";
 import CreateAccount from "./components/CreateAccount";
 import SearchComp from "./components/SearchComp";
 import ViewCustomers from "./components/ViewCustomers";
-
+import DeleteAccount from "./components/DeleteAccount";
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import CustomerInfo from "./components/CustomerInfo";
@@ -13,6 +13,12 @@ function App() {
 
 	return (
 		<>
+		<div style={{ backgroundImage: "url(http://localhost:3000/screen2.jpg)",
+	 backgroundPosition: 'center',
+	 backgroundSize: 'cover',
+	 backgroundRepeat: 'no-repeat',
+	 width: '100vw',
+	 height: '100vh' }}>
 			<BrowserRouter>
 				<div style={{
 					display: "flex",
@@ -47,13 +53,14 @@ function App() {
 					<Route exact path="/CreateAccount" element={<CreateAccount/>} />
 					<Route exact path="/SearchComp" element={<SearchComp/>} />
 					<Route exact path="/customerlist" element={<ViewCustomers/>} />
+					<Route exact path="/deletecustomer" element={<DeleteAccount/>} />
 					<Route path='/customerlist/:id' element={<CustomerInfo/>}/>
 				</Routes>
 			</BrowserRouter>
+			</div>
 		</>
 	);
 }
 
 export default App;
-
 

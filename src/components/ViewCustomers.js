@@ -28,8 +28,8 @@ function ViewCustomers() {
 
   return (
     <div className='container d-flex justify-content-center'>
-      <div className='row'>
-        <div className='col'>
+      <div className='row' style={{ display: 'flex', flex: 2, flexDirection: 'row'}}>
+        <div className='col' style={{ display: 'flex', flex: 2, flexDirection: 'row'}}>
           <ListGroup>
             {customers.length > 0 &&
               customers.map(customer => (

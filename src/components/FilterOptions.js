@@ -66,7 +66,7 @@ function FilterOptions() {
   };
 
   return (
-    <div style={{ backgroundColor: 'Black'}}>
+    <div >
         <div className='filterOptions m-5 p-5'>
      
      <Button type="submit" size='lg' onClick={handleClickGender}>Gender</Button>{' '}
