@@ -43,7 +43,7 @@ export async function getTransactionAmtByGender() {
   }
 
   export async function getTransactionAmtBySpendingAnalysis() {
-    let response = await fetch(`${url}/spendingByAmt/0/100`);
+    let response = await fetch(`${url}/spendingByAmt/0/50`);
     let transactionAmtBySpendingAnalysis = await response.json();
     console.log(transactionAmtBySpendingAnalysis);
     return transactionAmtBySpendingAnalysis;

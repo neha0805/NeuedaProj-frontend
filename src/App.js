@@ -3,6 +3,8 @@ import { BrowserRouter, Routes, Route, NavLink } from "react-router-dom";
 import Home from "./components/Home";
 import CreateAccount from "./components/CreateAccount";
 import SearchComp from "./components/SearchComp";
+import ChartAmtByCity from "./components/ChartAmtByCity";
+
 import ViewCustomers from "./components/ViewCustomers";
 import DeleteAccount from "./components/DeleteAccount";
 
@@ -30,7 +32,7 @@ function App() {
 							Credit Card 
 						</NavLink>
 					</div>
-          <div style={{ margin: '10px', fontSize: '20px', padding: '20px' }}>
+                    <div style={{ margin: '10px', fontSize: '20px', padding: '20px' }}>
 						<NavLink style={{textDecoration: 'none'}} to="/CreateAccount" >
 							Create Account
 						</NavLink>
@@ -50,6 +52,7 @@ function App() {
 				</div>
 				<Routes>
 					<Route exact path="/" element={<Home />} />
+					{/* <Route exact path="/" element={<ChartAmtByCity />} /> */}
 					<Route exact path="/CreateAccount" element={<CreateAccount/>} />
 					<Route exact path="/SearchComp" element={<SearchComp/>} />
 					<Route exact path="/customerlist" element={<ViewCustomers/>} />

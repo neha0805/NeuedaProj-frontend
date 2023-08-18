@@ -27,7 +27,12 @@ const handleRegister = (event)=>{
     let custid = getAllCustomers();
     let newcustomer = {firstName: firstName, lastName: lastName, dob: dob, gender: gender, customer_Id:custid.toString()}
     setCustomer(newcustomer)
-    addCustomer(newcustomer).then(res=>navigate('/'))
+    let cust = addCustomer(newcustomer).then(res=>navigate('/'));
+
+    if(cust)
+    alert('Cutomer registered');
+    else
+    alert('Cutomer already exists');
 }
 
 

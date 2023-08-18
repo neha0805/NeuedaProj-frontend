@@ -14,7 +14,7 @@ function DeleteAccount() {
     // You can use APIs, database calls, or any other logic to delete the account
 
     // For this example, we'll simply navigate back to the homepage after deletion
-    deleteCustomer(customerId)
+    let response = deleteCustomer(customerId)
     .then(() => {
       // Refresh the list after successful deletion (replace getAllCustomers with your data fetching)
       getAllCustomers().then(customers => setCustomers(customers));
@@ -22,6 +22,12 @@ function DeleteAccount() {
     .catch(error => {
       console.error('Error deleting customer:', error);
     });
+
+    if(response)
+    alert('Cutomer with '+customerId+ ' deleted');
+    else
+    alert('Cutomer not found');
+
   console.log("deleted")
   };
 

@@ -18,9 +18,8 @@ export async function getCustomerById(id) {
     let response = await fetch(`${url}/${id}`, {
       method: "DELETE",
     });
-    let data = await response.json();
-    console.log(data);
-    return data;
+    
+    return response;
   }
 
   export async function addCustomer(customer) {
