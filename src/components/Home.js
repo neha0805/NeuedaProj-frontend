@@ -1,9 +1,6 @@
 import React from 'react'
 import {Container , Button} from 'react-bootstrap'
-import { BrowserRouter, Routes, Route, NavLink, useNavigate } from "react-router-dom";
-import CreateAccount from "./CreateAccount";
-import SearchComp from "./SearchComp";
-import ViewCustomers from "./ViewCustomers";
+import { useNavigate } from "react-router-dom";
 
 
 const Home = () => {
